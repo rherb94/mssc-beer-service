@@ -19,6 +19,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @Builder
 public class BeerDto {
+    @JsonFormat(shape = JsonFormat.Shape.STRING)
     @Null
     private UUID id;
 
@@ -39,9 +40,8 @@ public class BeerDto {
     @NotNull
     private BeerStyleEnum beerStyleEnum;
 
-    @Positive
     @NotNull
-    private Long upc;
+    private String upc;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING)
     @Positive
