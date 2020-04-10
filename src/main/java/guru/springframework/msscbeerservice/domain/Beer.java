@@ -1,9 +1,6 @@
 package guru.springframework.msscbeerservice.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Type;
@@ -14,7 +11,8 @@ import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.util.UUID;
 
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -37,14 +35,17 @@ public class Beer {
 
     @UpdateTimestamp
     private Timestamp lastModifiedDate;
+
     private String beerName;
     private String beerStyle;
 
     @Column(unique = true)
     private String upc;
+
     private BigDecimal price;
 
     private Integer minOnHand;
     private Integer quantityToBrew;
+
 
 }
